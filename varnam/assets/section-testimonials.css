@@ -1,0 +1,111 @@
+.testimonial__heading { margin: 2rem 0 6rem; padding: 0; }
+.testimonial-container .testimonial-author { margin: 0; font-weight: 600; font-family: var(--font-heading-family); }
+.testimonial-container .testimonial-author a{ padding-right:30px; }
+
+.testimonials .testimonial-content blockquote{ transition:all 0.3s linear; border: none; background:none; margin-top: 0;padding:0; }
+/* .testimonial-content blockquote:before { font-family: var(--font-heading-family); content: "\201C"; font-size: 4em; position: absolute;
+left: 10px; top: -10px; line-height: normal; height: auto; transition: linear var(--duration-default); } */
+/* .testimonial-container:hover .testimonial-content blockquote { background:  var(--gradient-base-accent-2); }
+ .testimonial-container:hover .testimonial-content blockquote:before { font-size: 8em; top: -80px; } */
+.testimonial-content blockquote cite { margin-top:0rem;display: flex;flex-direction: row;font-style:normal; gap:5px; align-items:center; }
+.testimonial-content blockquote cite span{ padding: 0; margin: 0; }
+.testimonial-content blockquote cite span:before { display:none; }
+.testimonial-content blockquote > p{ font-style: normal; font-size: var(--font-base-size); line-height: normal;max-width:1000px;  }
+.slider-button--prev .icon { transform: rotate(90deg);}
+.testimonials .swiper-button-next:after, .testimonials .swiper-button-prev:after {  display: none;}
+.testimonials .swiper-button-next span, .testimonials .swiper-button-prev span{display:flex;} 
+blockquote {   margin: 0;  padding: 30px 0 30px 55px; position: relative;}
+.testimonials .swiper-controls { position: relative; width: 115px; bottom: 0; right: auto; left: auto; margin: auto;}
+.testimonials .swiper-container.testimonialsSwiper{margin-bottom:50px;}
+.testimonial-content blockquote.content-center{align-items: center;}
+.testimonial-content blockquote{display: flex;flex-direction: column;}
+.testimonial-content blockquote.content-center p,
+.testimonial-content blockquote.content-center span{text-align:center;}
+.testimonial-container .testimonial-image.content-center{display: flex;justify-content: center;margin:auto}
+.testimonial-container .content-center .dt-sc-rating div[class*=star-rating]:after{text-align:center}
+.testimonial-container  .dt-sc-rating{margin-top:30px;}
+
+.testimonials .testimonial-container .testimonial-wrapper{padding:30px;}
+.testimonial-container .testimonial-image{width:80px;height:80px;border-radius:50%;}
+.testimonial-container .testimonial-image > *{border-radius:50%;}
+
+@media screen and  (min-width:768px) (max-width: 990px) {
+.testimonials .testimonial-container .testimonial-content blockquote:before {
+   
+      content:'';
+      position:relative;
+      width:100px;
+      height:100px;
+      background-color:currentcolor;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+}
+
+
+@media screen and (max-width: 990px) {
+  .testimonial-container { grid-template-columns: 1fr 1fr; padding:  0; }  
+ .testimonials.testimonial-home-2 .testimonial-container blockquote:before { left: 0; }
+  /* .testimonial-container blockquote cite { margin-top: 3rem; } */
+  .testimonial-image .img { max-width: 200px; }
+}
+
+@media screen and (max-width: 750px) {
+  .testimonial-container { grid-template-columns: 1fr; }
+  .testimonial-container blockquote { margin-top: 0rem; padding: 20px; }
+  .testimonial-image { justify-content: center; }
+  .testimonial-image .img { max-width: 175px; }
+}
+
+@media screen and (max-width: 575px) {  
+  .testimonial-image .img { max-width: 150px; }
+}
+
+.testimonials  swiper-slider {
+    cursor: grab;
+}
+.testimonials .page-full-width .testimonial-content{padding-left:150px; padding-right:150px;}  
+.testimonials .swiper-pagination{position:relative;}
+@media screen and (max-width: 1199px) { 
+.testimonials .page-full-width .testimonial-content{padding-left:100px; padding-right:100px;}  
+}
+@media screen and (max-width: 750px) { 
+.testimonials .page-full-width .testimonial-content{padding-left:0px; padding-right:0px;}  
+}
+
+@media screen and (max-width: 480px) { 
+.testimonials .testimonial-container .testimonial-wrapper {
+    padding: 20px;
+}
+}
+
+
+/* custom css */
+.custom-testimonial .title-wrapper-with-link.content-align--center .description{max-width: 605px;margin: auto;}
+.custom-testimonial .testimonial-content blockquote>p{    max-width: 1300px;font-size: var(--font-h3-size);font-family: var(--font-heading-family);margin: 0 0 70px;}
+.testimonials.custom-testimonial .testimonial-container .testimonial-wrapper{padding:0;}
+.custom-testimonial .testimonial-content blockquote cite{margin-top:15px;flex-direction:column;gap:0;}
+.custom-testimonial .testimonial-container .testimonial-author{font-size: var(--font-h3-size);background: var(--heading-color); -webkit-background-clip: text;-webkit-text-fill-color: transparent;}
+.custom-testimonial .swiper-button-next, .custom-testimonial .swiper-button-prev{top:60px;}
+.custom-testimonial .swiper-button-next{right:0;}
+.custom-testimonial .swiper-button-prev{left:0;}
+@media screen and (max-width: 1540px) { 
+.custom-testimonial .testimonial-content blockquote>p{    max-width: 900px;}
+}
+@media screen and (max-width: 1199px) { 
+.custom-testimonial .testimonial-content blockquote>p{ max-width: 700px;font-size: calc(var(--font-h3-size) * 0.8);}
+}
+@media screen and (max-width: 990px) { 
+.custom-testimonial .testimonial-content blockquote>p{ max-width: 550px;font-size: calc(var(--font-h3-size) * 0.8);margin-bottom: 40px;}
+}
+@media screen and (max-width: 749px) {
+ .custom-testimonial .swiper-navigation {position: relative;display: flex;justify-content: center;margin-top: 20px;}
+ .custom-testimonial .swiper-button-next, .custom-testimonial .swiper-button-prev {position: relative;right: 0;left: 0;top: auto;opacity: 1;transform: none;margin: 0 12px;width: calc(var(--swiper-navigation-size) - 10px); height: calc(var(--swiper-navigation-size) - 10px);  }  
+  .custom-testimonial .swiper-button-prev {order: -1;}
+  .custom-testimonial .testimonial-content blockquote>p{ max-width: 100%;}
+}
+@media screen and (max-width: 480px){
+  .custom-testimonial .swiper-button-next, .custom-testimonial .swiper-button-prev{top:0px;}
+  .custom-testimonial .testimonial-content blockquote>p{ max-width: 700px;font-size: calc(var(--font-h3-size) * 0.7);}
+}

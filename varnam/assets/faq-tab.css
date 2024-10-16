@@ -1,0 +1,105 @@
+.shopify-section.faq-tab  .heading-wrappers .title {margin:0; padding-top:0rem;}
+.shopify-section.faq-tab  .nav-pills.text-center {justify-content:center;}
+.shopify-section.faq-tab #myTabContent .card {padding: 4rem;border-style: solid;border-width: 1px; border-image: var(--border-gradient) 1;}
+.item.heading.tab-pane {height:0; visibility:hidden; opacity:0; display:none;}
+.item.heading.tab-pane.active {height:auto; visibility:visible; opacity:1; display:block;}
+.btn-block {display:block; width:100%;}
+.text-left {text-align:left; justify-content:flex-start;}
+.text-right {text-align:right; justify-content:flex-end;}
+.text-center {text-align:center; justify-content:flex-center;}
+.shopify-section.faq-tab  button[aria-expanded="true"] span p, .shopify-section.faq-tab  .card-header button:hover span p, .shopify-section.faq-tab  .card-header button[aria-expanded="true"] span p, .shopify-section.faq-tab  .card-header .btn:not([disabled]):hover span p {color: { {section.settings.primary}}!important;}
+.shopify-section.faq-tab  .btn.focus, .shopify-section.faq-tab  .btn:focus {box-shadow:none;}
+.shopify-section.faq-tab  .card .answer {display:none;}
+.shopify-section.faq-tab  .shadow-sm {box-shadow:0px 14px 15px 0px rgba(0, 0, 0, 0.05) !important;}
+.shopify-section.faq-tab  h4:empty {display:none;}
+.shopify-section.faq-tab #myTabContent {width:100%; padding:0px 0 0 0px;}
+.shopify-section.faq-tab  .card-body {padding:0px; margin-top:15px; text-align:start;}
+.shopify-section.faq-tab  .card {border:none; overflow:hidden;}
+.shopify-section.faq-tab  .card-header {padding:0; margin-bottom:0rem; background:none;}
+.shopify-section.faq-tab  .card-header button {margin:0; padding:0; cursor:pointer;display: flex;justify-content: space-between;align-items:center;gap: 15px;}
+.shopify-section.faq-tab  .card-header button > span {width:100%; padding:20px; float:left; letter-spacing:0; position:relative; text-transform:initial;}
+.shopify-section.faq-tab #myTabContent .card:not(:last-child) {margin-bottom:20px;}
+.shopify-section.faq-tab  .card-header button span p {margin-bottom:0;}
+
+.shopify-section.faq-tab  .nav-pills .nav-item{ text-align:left; }
+.shopify-section.faq-tab  .card .answer {display:none;}
+.faq-tab article.tab-content {display: flex;gap: 105px;justify-content: space-between;}
+.shopify-section.faq-tab #myTabContent{width:calc(100% - 740px);}
+.faq-tab nav.tabs{width:640px;}
+.shopify-section.faq-tab .nav-pills .nav-item a.nav-link{
+    padding: 42px 0;
+    text-decoration: none;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: var(--heading-color);
+    border-bottom: 2px solid rgba(var(--color-button), 0.2);
+    transition: all 0.3s linear;display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-heading-family);
+    font-weight: var(--font-heading-weight);
+    font-size: var(--font-h3-size); 
+    position:relative;transition:all 0.3s linear;}
+.shopify-section.faq-tab .nav-pills .nav-item a.nav-link.active{    border-bottom: 2px solid rgba(var(--color-button), 0.5);}
+.shopify-section.faq-tab .nav-pills .nav-item:first-child a.nav-link:after{top:0;}
+.shopify-section.faq-tab .nav-pills .nav-item a.nav-link:after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    background: var(--border-gradient);
+    opacity: 0;
+}
+.shopify-section.faq-tab .nav-pills .nav-item a.nav-link.active:after {
+    opacity: 1;
+}
+.shopify-section.faq-tab .nav-pills .nav-item a.nav-link svg{transition:all 0.3s linear;}
+.shopify-section.faq-tab .nav-pills .nav-item a.nav-link:hover svg{transform:translateX(-20px);-webkit-transform:translateX(-20px);}
+.shopify-section.faq-tab .tab-content .card-header button span.title-faq{   
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 20px;
+    font-family: var(--font-heading-family);
+    font-size: var(--font-h3-size);
+    color: rgb(var(--color-foreground));
+    padding: 0;
+    background: var(--heading-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;width: calc(100% - 30px);}
+.shopify-section.faq-tab .card-header button .icon-one{width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--gradient-button);
+    border-radius: 50%;
+    color: rgba(var(--color-button-text));
+    transition: all 0.3s linear;}
+
+.shopify-section.faq-tab .card-header button .icon-one svg{transform: rotate(90deg); transition: all 0.3s linear;}
+ .shopify-section.faq-tab  .card-header.open button  .icon-one svg {     transform: rotate(-90deg); }
+
+ @media screen and (max-width:1540px) {
+.shopify-section.faq-tab #myTabContent{width:calc(100% - 540px);}
+.faq-tab nav.tabs{width:500px;}
+.faq-tab article.tab-content{gap:40px;}
+ }
+ @media screen and (max-width:1199px) {
+.shopify-section.faq-tab #myTabContent{width:calc(100% - 440px);}
+.faq-tab nav.tabs{width:400px;}
+
+ }
+ @media screen and (max-width:990px) {
+.shopify-section.faq-tab #myTabContent{width:100%;}
+.faq-tab nav.tabs{width:100%;}
+.faq-tab article.tab-content{flex-direction:column;}
+.faq-tab article.tab-content{gap:60px;}   
+ }
+@media screen and (max-width:576px) {
+  .shopify-section.faq-tab .tab-content .card-header button span.title-faq{font-size: calc(var(--font-h3-size) * 0.8); }
+  .shopify-section.faq-tab #myTabContent .card{padding:2rem;}
+  .shopify-section.faq-tab .nav-pills .nav-item a.nav-link{font-size: calc(var(--font-h3-size) * 0.8);padding:3rem 0; }
+}

@@ -1,0 +1,84 @@
+ {%- if section.settings.search_style == 'search_icon' or section.settings.search_style == 'search_box' -%}
+      <details-overlay-modal class="header__search {% if section.settings.header_icon_type =="text"  %} icon__fallback-content {% endif %}" id="dT_top-sticky">
+          <div class="search-modal modal__content gradient" role="dialog" aria-modal="true" aria-label="{{ 'general.search.search' | t }}">
+            <div class="modal-overlay"></div>
+            
+            <div class="search-modal__content{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} search-modal__content-top{% else %} search-modal__content-bottom{% endif %}" tabindex="-1">
+             <button type="button" class="dT_TopStickySearchCloseBtn search-modal__close-button modal__close-button link link--text focus-inset" aria-label="{{ 'accessibility.close' | t }}">
+                   <svg id="Group_24924" data-name="Group 24924" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 25 25">
+            <defs>
+            <clipPath id="clip-path">
+            <rect id="Rectangle_8252" data-name="Rectangle 8252" width="18" height="18" fill="currentcolor"/>
+            </clipPath>
+            </defs>
+            <g id="Group_24923" data-name="Group 24923" >
+            <path id="Path_38934" data-name="Path 38934" d="M23.214,25a1.78,1.78,0,0,1-1.263-.523L.523,3.048A1.786,1.786,0,0,1,3.048.523L24.477,21.952A1.786,1.786,0,0,1,23.214,25" transform="translate(0)"  fill="currentcolor"/>
+            <path id="Path_38935" data-name="Path 38935" d="M1.786,25A1.786,1.786,0,0,1,.523,21.952L21.952.523a1.786,1.786,0,1,1,2.525,2.525L3.048,24.477A1.78,1.78,0,0,1,1.786,25" transform="translate(0 0)"  fill="currentcolor"/>
+            </g>
+            </svg>
+              </button>
+              {%- if settings.predictive_search_enabled -%}
+          <predictive-search class="search-modal__form" data-loading-text="{{ 'accessibility.loading' | t }}">
+        {%- else -%}
+          <search-form class="search-modal__form">
+        {%- endif -%}
+            <form action="{{ routes.search_url }}" method="get" role="search" class="search search-modal__form">
+               <h2 class="predictive-heading">{{ 'general.search.preductive_heading' | t }}</h2>  
+              <div class="field">
+                <input class="search__input field__input"
+                  id="{{ input_id }}"
+                  type="search"
+                  name="q"
+                  value="{{ search.terms | escape }}"
+                  placeholder="{{ 'general.search.search' | t }}"
+                  {%- if settings.predictive_search_enabled -%}
+                    role="combobox"
+                    aria-expanded="false"
+                    aria-owns="predictive-search-results"
+                    aria-controls="predictive-search-results"
+                    aria-haspopup="listbox"
+                    aria-autocomplete="list"
+                    autocorrect="off"
+                    autocomplete="off"
+                    autocapitalize="off"
+                    spellcheck="false"
+                  {%- endif -%}
+                >
+                <label class="field__label" for="{{ input_id }}">{{ 'general.search.search' | t }}</label>
+                <input type="hidden" name="options[prefix]" value="last">
+                <button type="reset" class="reset__button field__button{% if search.terms == blank %} hidden{% endif %}" aria-label="{{ 'general.search.reset' | t }}">
+                  <svg class="icon icon-close" aria-hidden="true" focusable="false">
+                    <use xlink:href="#icon-reset">
+                  </svg>
+                </button>
+                <button class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6.5 12.9977C2.91554 12.9977 0 10.0822 0 6.5C0 2.91785 2.91554 0 6.5 0C10.0845 0 13 2.91554 13 6.5C13 10.0845 10.0845 13 6.5 13V12.9977ZM6.5 1.1533C3.55216 1.1533 1.1533 3.55216 1.1533 6.5C1.1533 9.44784 3.55216 11.8467 6.5 11.8467C9.44784 11.8467 11.8467 9.44784 11.8467 6.5C11.8467 3.55216 9.44784 1.1533 6.5 1.1533Z" fill="currentcolor"/>
+                  <path d="M15.3988 16C15.2452 16 15.0916 15.9424 14.974 15.8248L10.1764 11.0262C9.9412 10.791 9.9412 10.4117 10.1764 10.1764C10.4116 9.94119 10.7908 9.94119 11.026 10.1764L15.8236 14.975C16.0588 15.2102 16.0588 15.5895 15.8236 15.8248C15.706 15.9424 15.5524 16 15.3988 16Z" fill="currentcolor"/>
+                  </svg>
+                </button>
+              </div>
+                {% render 'search-tags-collections', headerType: section.settings.logo_position, line: 'line-70' %}   
+              {%- if settings.predictive_search_enabled -%}
+                <div class="predictive-search predictive-search--header" tabindex="-1" data-predictive-search>
+                  <div class="predictive-search__loading-state">
+                    <svg aria-hidden="true" focusable="false" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                      <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                    </svg>
+                  </div>
+                </div>
+
+                <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
+              {%- endif -%}
+               {% render 'search-card-product-model', headerType: section.settings.logo_position, line: 'line-70' %}  
+            </form>
+          {%- if settings.predictive_search_enabled -%}
+            </predictive-search>
+          {%- else -%}
+            </search-form>
+          {%- endif -%}             
+         
+            </div>  
+          </div>        
+                  </details-overlay-modal>
+        {%- endif -%}
